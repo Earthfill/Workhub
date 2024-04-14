@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .align-element {
+    @apply mx-auto max-w-7xl px-7;
+  }
+  
+  .align-page {
+    @apply shadow-sm md:max-w-full rounded-md p-10 bg-white;
+  }
+
+  .page-title {
+    @apply capitalize text-3xl font-medium;
+  }
+
+  .page-grid {
+    @apply grid md:grid-cols-3 md:gap-4 ;
+  }
+
+  .button-style {
+    @apply py-1 px-4 rounded-md capitalize text-sm
+  }
+}
