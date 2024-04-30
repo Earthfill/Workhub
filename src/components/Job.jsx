@@ -23,7 +23,14 @@ const Job = ({ _id, position, company, jobLocation, jobType, createdAt, status }
           <JobInfo icon={<FaLocationArrow />} text={jobLocation} />
           <JobInfo icon={<FaCalendarAlt />} text={date} />
           <JobInfo icon={<FaBriefcase />} text={jobType} />
-          <div className={`w-fit h-fit button-style ${status === 'declined' ? 'bg-red-200 text-red-700' : status === 'pending' ? 'bg-yellow-200 text-yellow-700' : status === 'fulfilled' ? 'bg-green-500 text-green-700' : ''}`}>{status}</div>
+          <div className={`w-fit h-fit button-style 
+              ${status === 'declined' ? 'bg-red-200 text-red-700' 
+              : status === 'pending' ? 'bg-yellow-200 text-yellow-700' 
+              : status === 'fulfilled' ? 'bg-green-500 text-green-700' 
+              : status === 'interview' ? 'bg-blue-200' : 'text-blue-700'}`}
+          >
+            {status}
+          </div>
           <footer>
             <div className="flex gap-3">
               <Link

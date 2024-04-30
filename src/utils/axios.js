@@ -3,7 +3,7 @@ import { clearStore } from "../features/user/userSlice";
 import { getUserFromLocalStorage } from "./localStorage";
 
 export const customFetch = axios.create({
-  baseURL: 'https://jobify-prod.herokuapp.com/api/v1/toolkit',
+  baseURL: 'https://redux-toolkit-jobster-api-server.onrender.com/api/v1',
 });
 
 customFetch.interceptors.request.use((config) => {
@@ -12,7 +12,7 @@ customFetch.interceptors.request.use((config) => {
     config.headers['Authorization'] = `Bearer ${user.token}`;
   }
   return config;
-})
+});
 
 export const checkForUnauthorizedResponse = (error, thunkAPI) => {
   if (error.response.status === 401) {

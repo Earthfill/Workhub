@@ -1,7 +1,7 @@
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux"
-import { ClearBtn, FormInput, FormSelect, SectionTitle } from "../../components";
-import { createJob, editJob, handleChange } from "../../features/job/jobSlice";
+import { FormInput, FormSelect, SectionTitle } from "../../components";
+import { clearValues, createJob, editJob, handleChange } from "../../features/job/jobSlice";
 import { useEffect } from "react";
 
 const AddJob = () => {
@@ -41,7 +41,7 @@ const AddJob = () => {
   return (
     <form className="align-page">
       <SectionTitle text={isEditing ? 'edit job' : 'add job'} />
-      <div className="page-grid  overflow-y-auto max-h-96">
+      <div className="page-grid overflow-y-auto">
         <FormInput
           type='text'
           name='position'
@@ -63,18 +63,26 @@ const AddJob = () => {
         />
         <FormSelect
           name='status'
+          label='status'
           value={status}
           list={statusOptions}
           handleChange={handleJobInput}
           />
         <FormSelect
           name='jobType'
+          label='job type'
           value={jobType}
           list={jobTypeOptions}
           handleChange={handleJobInput}
         />
-        <div className="grid grid-cols-2 gap-4 md:content-end pt-5 md:pt-0">
-          <ClearBtn />
+        <div className="grid grid-cols-2 gap-4 lg:content-end pt-5 lg:pt-0">
+          <button
+            type="button"
+            onClick={() => dispatch(clearValues())}
+            className=" bg-gray-700 text-white capitalize hover:bg-black hover:text-white rounded-md"
+          >
+            <span>Clear</span>
+          </button>
           <button
             type="submit"
             className="btn btn-primary btn-block capitalize"

@@ -29,7 +29,7 @@ const StatsContainer = () => {
   ];
 
   return (
-    <div>
+    <div className="grid gap-y-5 md:flex md:justify-between md:gap-x-5">
       {defaultStats.map((item, index) => {
         return <StatItem key={index} {...item} />
       })}

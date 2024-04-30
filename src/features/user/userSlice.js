@@ -3,7 +3,6 @@ import toast from "react-hot-toast";
 import { addUserToLocalStorage, getUserFromLocalStorage, removeUserFromLocalStorage } from "../../utils/localStorage";
 import { getThemeFromLocalStorage } from "../../utils/theme";
 import { clearStoreThunk, loginUserThunk, registerUserThunk, updateUserThunk } from "./userThunk";
-import { toFormData } from "axios";
 
 // const getUserFromLocalStorage = () => {
 //   return JSON.parse(localStorage.getItem('user')) || null;
@@ -109,7 +108,7 @@ const userSlice = createSlice({
         toast.error('Unable to update');
       })
       .addCase(clearStore.rejected, () => {
-        toFormData.error('There was an error..')
+        toast.error('There was an error..')
       });
   }
 });

@@ -8,13 +8,13 @@ const SharedLayout = () => {
   return (
     <main className="flex overflow-hidden">
       {/* Small Sidebar */}
-      <div className="md:hidden"> {/* Hide on smaller screens */}
+      <div className="lg:hidden"> {/* Hide on smaller screens */}
         <SmallSidebar />
       </div>
 
       {/* Big Sidebar (conditionally rendered based on isSidebarOpen) */}
       {isSidebarOpen && (
-        <div className="w-64 hidden md:block">
+        <div className="w-64 hidden lg:block">
           <BigSidebar />
         </div>
       )}

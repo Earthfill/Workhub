@@ -16,7 +16,7 @@
   }
 
   .page-grid {
-    @apply grid md:grid-cols-3 md:gap-4 ;
+    @apply grid lg:grid-cols-3 lg:gap-4 ;
   }
 
   .button-style {

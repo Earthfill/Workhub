@@ -34,7 +34,7 @@ const Profile = () => {
   return (
     <form onSubmit={handleSubmit} className="align-page">
       <SectionTitle text='profile' />
-      <div className="grid md:grid-cols-3 md:gap-4">
+      <div className="grid lg:grid-cols-3 lg:gap-4">
         <FormInput
           type='text'
           name='name'
@@ -60,7 +60,7 @@ const Profile = () => {
           value={userData.location}
           handleChange={handleChange}
         />
-        <div className="pt-5 md:pt-0 md:content-end">
+        <div className="pt-5 lg:pt-0 lg:content-end">
           <button
             type="submit"
             className="btn btn-primary btn-block capitalize"

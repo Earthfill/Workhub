@@ -13,7 +13,7 @@ const SmallSidebar = () => {
   };
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       {/* Sidebar container with conditional visibility */}
       <aside className={`fixed inset-0 z-50 bg-black bg-opacity-70 transition-opacity ${isSidebarOpen ? 'block' : 'hidden'}`}>
         {/* Sidebar content */}
